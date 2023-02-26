@@ -68,6 +68,56 @@
 
 
           <center>
+            <h2>Real-World Deployment in Apartment</h2>
+            <br>
+            <video playsinline autoplay muted loop controls style="width: 100%">
+              <source src="media/apartment_30x.webm" type="video/webm"></source>
+            </video>
+            <h4><i>30x speed</i></h4>
+          </center>
+
+
+          <br><hr><br>
+
+
+          <center>
+            <h2>Abstract</h2>
+          </center>
+          <br>
+          <p style="font-size: 20px; text-indent: 50px">
+            We present Adaptive Skill Coordination (ASC) -- an approach for accomplishing long-horizon tasks (e.g., mobile pick-and-place, consisting of navigating to an object, picking it, navigating to another location, placing it, repeating). ASC consists of three components -- (1) a library of basic visuomotor skills (navigation, pick, place), (2) a skill coordination policy that chooses which skills are appropriate to use when, and (3) a corrective policy that adapts pre-trained skills when out-of-distribution states are perceived. All components of ASC rely only on onboard visual and proprioceptive sensing, without access to privileged information like pre-built maps or precise object locations, easing real-world deployment. We train ASC in simulated indoor environments, and deploy it zero-shot in two novel real-world environments on the Boston Dynamics Spot robot. ASC achieves near-perfect performance at mobile pick-and-place, succeeding in 59/60 (98%) episodes, while sequentially executing skills succeeds in only 44/60 (73%) episodes. It is robust to hand-off errors, changes in the environment layout, dynamic obstacles (e.g., people), and unexpected disturbances, making it an ideal framework for complex, long-horizon tasks.
+          </p>
+
+          <br>  
+          <center>
+            <h2>Task Description</h2>
+            <br>
+            <img src="media/task_diagram.jpg" width="100%">
+          </center>
+          <br>
+          <p style="font-size: 20px; text-indent: 50px">
+            From its initial location, the robot navigates to a receptacle located at (x, y, &theta;)_pick, searches for, and picks a target object amongst the clutter. It then navigates to the place receptacle corresponding to the object, located at (x, y, &theta;)_place and places the object at the target place location (x, y, z)_tgt.
+          </p>
+
+
+          
+
+          <br>  
+          <center>
+            <h2>Framework Architecture</h2>
+            <br>
+            <img src="media/framework_architecture.jpg" width="100%">
+          </center>
+          <br>
+          <p style="font-size: 20px; text-indent: 50px">
+            Training ASC consists of two steps: (a) First, we train a library of 3 basic visuomotor skills in diverse simulated environments. The skills are trained using RL to achieve the relatively shorter-horizon tasks of navigation, picking and placing, and command robot base velocities and delta joint positions. (b) Next, we train a skill coordination policy that chooses which skills are appropriate to use based on observations, and a corrective policy that adapts the pre-trained skills in out-of-distribution states, for the task of object rearrangement.
+          </p>
+
+
+          <br><hr><br>
+
+
+          <center>
             <h2>Robustness to Perturbations</h2>
             <br>
             <div class="videoWrapper">
@@ -92,23 +142,7 @@
           </center>
 
 
-          <br><hr><br>
-
-
-          <center>
-            <h2>Real-World Deployment in Apartment</h2>
-            <div class="videoWrapper">
-              <iframe width="2560" height="1135"
-                src="https://www.youtube.com/embed/gv0l5KxuCuc" title="ASC: Real-World Deployment in Apartment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-              </iframe>
-            </div>
-            <h4><i>30x speed</i></h4>
-          </center>
-
-
-          <br><hr><br>
-
-
+          
           <div class="col-md-1"></div>
       </div>
     </div>  
